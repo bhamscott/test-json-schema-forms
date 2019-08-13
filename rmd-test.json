@@ -1,0 +1,108 @@
+{
+    schema: {
+      type: 'object',
+      title: 'My Form from JSON Server',
+      properties: {
+        ManuallyComputed: {
+          type: 'string'
+        },
+        CurrentYearAmount: {
+          type: 'string'
+        },
+        CurrentYearMarketValue: {
+          type: 'string'
+        },
+        DateOfEntry: {
+          type: 'string',
+          format: 'date'
+        },
+        FirstDistributionYear: {
+          type: 'string'
+        },
+        FirstDistributionAmount: {
+          type: 'string'
+        }
+      },
+      // required: ['ManuallyComputed', 'FirstDistributionAmount']
+      required: ['ManuallyComputed']
+    },
+    layout: [
+      {
+        widget: 'message',
+        message: '<h3>External Data: Required minimum distribution</h3>'
+      },
+      {
+        key: 'ManuallyComputed',
+        type: 'radios-inline',
+        notitle: false,
+        title: 'Manually computed',
+        wruxDynamic: false,
+        wruxDynamicHook: '',
+        wruxDynamicParams: [],
+        titleMap: [
+          {
+            name: 'Yes',
+            value: 'yes'
+          },
+          {
+            name: 'No',
+            value: 'no'
+          }
+        ]
+      },
+      {
+        key: 'CurrentYearAmount',
+        floatLabel: 'auto',
+        validationMessages: {
+          required: 'Required'
+        },
+        type: 'integer',
+        title: 'Current year amount',
+        disabled: false,
+        readonly: false,
+        notitle: false
+      },
+      {
+        key: 'CurrentYearMarketValue',
+        floatLabel: 'auto',
+        validationMessages: {
+          required: 'Required'
+        },
+        type: 'integer',
+        title: 'Current year market value',
+        disabled: false,
+        readonly: false,
+        notitle: false
+      },
+      {
+        key: 'DateOfEntry',
+        readonly: false,
+        title: 'Date'
+      },
+      {
+        key: 'FirstDistributionYear',
+        type: 'select',
+        title: 'First distribution year',
+        titleMap: [
+          {
+            name: 'Option 1',
+            value: 'option1'
+          },
+          {
+            name: 'Option 2',
+            value: 'option2'
+          }
+        ]
+      },
+      {
+        key: 'FirstDistributionAmount',
+        floatLabel: 'auto',
+        validationMessages: {
+          required: 'Required! This field cannot be left empty'
+        },
+        type: 'integer',
+        title: 'First distribution amount'
+      }
+    ],
+    data: {}
+    }
