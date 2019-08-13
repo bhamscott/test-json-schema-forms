@@ -1,1624 +1,5 @@
 {
-  "forms": [{
-      "id": "1552501062249",
-      "meta": {
-        "name": "Select Options from Service Test",
-        "created": "Wed, Mar 13, 2019, 2:17:08 PM",
-        "modified": 1564590476141,
-        "formType": "form",
-        "groupId": "1552501042000",
-        "workflowId": "",
-        "size": "4.373 KB",
-        "id": "1552501062249",
-        "index": 0,
-        "createdInitValue": "Wed, Mar 13, 2019, 2:17:08 PM",
-        "modifiedInitValue": "Wed, Jul 31, 2019, 12:02:06 PM",
-        "templateId": "none"
-      },
-      "model": [{
-          "dnd": {
-            "fieldType": {
-              "type": "AF",
-              "used": true
-            },
-            "index": 0,
-            "active": false,
-            "group": "Other",
-            "type": "custom",
-            "parentIndex": null,
-            "layoutIndex": 0,
-            "id": "16BC252F5C2"
-          },
-          "json": {
-            "schema": {
-              "properties": {},
-              "required": []
-            },
-            "layout": [{
-              "widget": "message",
-              "message": "<h3>Example of  loading options from service</h3>",
-              "id": "16BC252F5C2"
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 1,
-            "active": false,
-            "group": "common",
-            "label": "Account Number",
-            "type": "text",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16C0A5B4AFA",
-            "parentIndex": null,
-            "layoutIndex": 1
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "account-gref": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "key": "account-gref",
-              "appearance": "outline",
-              "floatLabel": "always",
-              "id": "16C0A5B4AFA",
-              "validationMessages": {
-                "required": "Required"
-              },
-              "type": "text",
-              "title": "Account Number",
-              "disabled": false,
-              "notitle": false,
-              "readonly": true,
-              "wruxAutoCompleteHook": "",
-              "wruxAutoCompleteParams": [],
-              "wruxAutoCompleteResultValueOnly": false,
-              "wruxAutoCompleteApiSearch": true,
-              "enableChangeEvent": false,
-              "customEvent": ""
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "fieldType": {
-              "type": "AF",
-              "used": true
-            },
-            "index": 2,
-            "active": false,
-            "group": "layout",
-            "label": "Section",
-            "children": [{
-                "dnd": {
-                  "fieldType": {
-                    "type": "AF",
-                    "used": true
-                  },
-                  "index": 3,
-                  "active": false,
-                  "group": "common",
-                  "label": "Contacts",
-                  "type": "select",
-                  "parentIndex": 2,
-                  "layoutIndex": null,
-                  "id": "16BC252F5C4"
-                },
-                "json": {
-                  "schema": {
-                    "properties": {
-                      "select-contact-name": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "select-contact-name"
-                    ]
-                  },
-                  "layout": [{
-                    "key": "select-contact-name",
-                    "appearance": "outline",
-                    "type": "select",
-                    "floatLabel": "always",
-                    "id": "16BC252F5C4",
-                    "multiple": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "title": "Contacts",
-                    "allowUnselect": false,
-                    "wruxDynamic": true,
-                    "wruxDynamicHook": "getList",
-                    "wruxDynamicParams": [{
-                        "name": "_endpoint",
-                        "value": "contacts"
-                      },
-                      {
-                        "name": "_sort",
-                        "value": "full_name"
-                      },
-                      {
-                        "name": "_order",
-                        "value": "asc"
-                      },
-                      {
-                        "name": "_labelKey",
-                        "value": "full_name"
-                      },
-                      {
-                        "name": "_valueKey",
-                        "value": "id"
-                      }
-                    ],
-                    "titleMap": [{
-                      "name": "LOADING...",
-                      "value": null
-                    }],
-                    "enableChangeEvent": true,
-                    "customEvent": "selectContactNameOnChange"
-                  }],
-                  "data": {}
-                }
-              },
-              {
-                "dnd": {
-                  "fieldType": {
-                    "type": "AF",
-                    "used": true
-                  },
-                  "index": 4,
-                  "active": true,
-                  "group": "common",
-                  "label": "Stocks",
-                  "type": "select",
-                  "parentIndex": 2,
-                  "layoutIndex": null,
-                  "id": "16BC252F5C4"
-                },
-                "json": {
-                  "schema": {
-                    "properties": {
-                      "select-stock-name": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "select-stock-name"
-                    ]
-                  },
-                  "layout": [{
-                    "key": "select-stock-name",
-                    "appearance": "outline",
-                    "type": "select",
-                    "floatLabel": "always",
-                    "id": "16BC252F5C4",
-                    "multiple": false,
-                    "notitle": false,
-                    "title": "Stocks",
-                    "allowUnselect": false,
-                    "wruxDynamic": true,
-                    "wruxDynamicHook": "getList",
-                    "wruxDynamicParams": [{
-                        "name": "_endpoint",
-                        "value": "stocks"
-                      },
-                      {
-                        "name": "_sort",
-                        "value": "name"
-                      },
-                      {
-                        "name": "_order",
-                        "value": "asc"
-                      },
-                      {
-                        "name": "_labelKey",
-                        "value": "name"
-                      },
-                      {
-                        "name": "_valueKey",
-                        "value": "symbol"
-                      },
-                      {
-                        "name": "_labelFormat",
-                        "value": "{{name}} ({{symbol}})"
-                      }
-                    ],
-                    "titleMap": [{
-                      "name": "LOADING...",
-                      "value": null
-                    }],
-                    "enableChangeEvent": true,
-                    "customEvent": "selectStockNameOnChange"
-                  }],
-                  "data": {}
-                }
-              }
-            ],
-            "type": "section",
-            "parentIndex": null,
-            "layoutIndex": 2,
-            "id": "16BC252F5C4"
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "select-contact-name": {
-                  "type": "string"
-                },
-                "select-stock-name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "select-contact-name",
-                "select-stock-name"
-              ]
-            },
-            "layout": [{
-              "name": "div16C0A613E34",
-              "type": "div",
-              "display": "flex",
-              "flex-direction": "column",
-              "justify-content": "space-evenly",
-              "align-content": "stretch",
-              "align-items": "stretch",
-              "flex-wrap": "initial",
-              "expandable": true,
-              "expanded": true,
-              "id": "16BC252F5C4",
-              "notitle": false,
-              "title": "Section",
-              "items": [{
-                  "key": "select-contact-name",
-                  "appearance": "outline",
-                  "type": "select",
-                  "floatLabel": "always",
-                  "id": "16BC252F5C4",
-                  "multiple": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "title": "Contacts",
-                  "allowUnselect": false,
-                  "wruxDynamic": true,
-                  "wruxDynamicHook": "getList",
-                  "wruxDynamicParams": [{
-                      "name": "_endpoint",
-                      "value": "contacts"
-                    },
-                    {
-                      "name": "_sort",
-                      "value": "full_name"
-                    },
-                    {
-                      "name": "_order",
-                      "value": "asc"
-                    },
-                    {
-                      "name": "_labelKey",
-                      "value": "full_name"
-                    },
-                    {
-                      "name": "_valueKey",
-                      "value": "id"
-                    }
-                  ],
-                  "titleMap": [{
-                    "name": "LOADING...",
-                    "value": null
-                  }],
-                  "enableChangeEvent": true,
-                  "customEvent": "selectContactNameOnChange"
-                },
-                {
-                  "key": "select-stock-name",
-                  "appearance": "outline",
-                  "type": "select",
-                  "floatLabel": "always",
-                  "id": "16BC252F5C4",
-                  "multiple": false,
-                  "notitle": false,
-                  "title": "Stocks",
-                  "allowUnselect": false,
-                  "wruxDynamic": true,
-                  "wruxDynamicHook": "getList",
-                  "wruxDynamicParams": [{
-                      "name": "_endpoint",
-                      "value": "stocks"
-                    },
-                    {
-                      "name": "_sort",
-                      "value": "name"
-                    },
-                    {
-                      "name": "_order",
-                      "value": "asc"
-                    },
-                    {
-                      "name": "_labelKey",
-                      "value": "name"
-                    },
-                    {
-                      "name": "_valueKey",
-                      "value": "symbol"
-                    },
-                    {
-                      "name": "_labelFormat",
-                      "value": "{{name}} ({{symbol}})"
-                    }
-                  ],
-                  "titleMap": [{
-                    "name": "LOADING...",
-                    "value": null
-                  }],
-                  "enableChangeEvent": true,
-                  "customEvent": "selectStockNameOnChange"
-                }
-              ]
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 5,
-            "active": false,
-            "group": "common",
-            "label": "Comment",
-            "type": "text",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16C1EF3DBB8",
-            "parentIndex": null,
-            "layoutIndex": 3
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "comment": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "comment"
-              ]
-            },
-            "layout": [{
-              "key": "comment",
-              "appearance": "outline",
-              "floatLabel": "always",
-              "id": "16C1EF3DBB8",
-              "validationMessages": {
-                "required": "Required"
-              },
-              "type": "text",
-              "title": "Comment",
-              "disabled": false,
-              "notitle": false,
-              "readonly": false,
-              "wruxAutoCompleteHook": "",
-              "wruxAutoCompleteParams": [],
-              "wruxAutoCompleteResultValueOnly": false,
-              "wruxAutoCompleteApiSearch": true
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 6,
-            "active": false,
-            "group": "other",
-            "label": "<p>Account Number: <b>{{account-gref}}</b></p>\n<p>Contact: <b>{{select-contact-name}}</b></p>\n<p>Comment: <b>{{comment}}</b></p>\n",
-            "type": "custom",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16C1B4597E0",
-            "parentIndex": null,
-            "layoutIndex": 4
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "title16C1EF4786A": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "widget": "message",
-              "id": "16C1B4597E0",
-              "title": "<p>Account Number: <b>{{account-gref}}</b></p>\n<p>Contact: <b>{{select-contact-name}}</b></p>\n<p>Comment: <b>{{comment}}</b></p>\n",
-              "name": "title16C1EF4786A"
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "fieldType": {
-              "type": "AF",
-              "used": true
-            },
-            "index": 7,
-            "active": false,
-            "group": "common",
-            "label": "Submit",
-            "type": "button",
-            "parentIndex": null,
-            "layoutIndex": 5,
-            "id": "16BC252F5C4"
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "submit1552508822773": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "color": "primary",
-              "customEvent": "",
-              "disabled": "disableInvalidSubmit",
-              "id": "16BC252F5C4",
-              "matbuttontype": "flat",
-              "name": "submit1552508822773",
-              "title": "Submit",
-              "type": "submit"
-            }]
-          }
-        }
-      ],
-      "json": {
-        "schema": {
-          "type": "object",
-          "title": "My New Form",
-          "properties": {
-            "account-gref": {
-              "type": "string"
-            },
-            "select-contact-name": {
-              "type": "string"
-            },
-            "select-stock-name": {
-              "type": "string"
-            },
-            "comment": {
-              "type": "string"
-            },
-            "title16C1EF4786A": {
-              "type": "string"
-            },
-            "submit1552508822773": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "select-contact-name",
-            "select-stock-name",
-            "comment"
-          ]
-        },
-        "layout": [{
-            "widget": "message",
-            "message": "<h3>Example of  loading options from service</h3>",
-            "id": "16BC252F5C2"
-          },
-          {
-            "key": "account-gref",
-            "appearance": "outline",
-            "floatLabel": "always",
-            "id": "16C0A5B4AFA",
-            "validationMessages": {
-              "required": "Required"
-            },
-            "type": "text",
-            "title": "Account Number",
-            "disabled": false,
-            "notitle": false,
-            "readonly": true,
-            "wruxAutoCompleteHook": "",
-            "wruxAutoCompleteParams": [],
-            "wruxAutoCompleteResultValueOnly": false,
-            "wruxAutoCompleteApiSearch": true,
-            "enableChangeEvent": false,
-            "customEvent": ""
-          },
-          {
-            "name": "div16C0A613E34",
-            "type": "div",
-            "display": "flex",
-            "flex-direction": "column",
-            "justify-content": "space-evenly",
-            "align-content": "stretch",
-            "align-items": "stretch",
-            "flex-wrap": "initial",
-            "expandable": true,
-            "expanded": true,
-            "id": "16BC252F5C4",
-            "notitle": false,
-            "title": "Section",
-            "items": [{
-                "key": "select-contact-name",
-                "appearance": "outline",
-                "type": "select",
-                "floatLabel": "always",
-                "id": "16BC252F5C4",
-                "multiple": false,
-                "notitle": false,
-                "readonly": false,
-                "title": "Contacts",
-                "allowUnselect": false,
-                "wruxDynamic": true,
-                "wruxDynamicHook": "getList",
-                "wruxDynamicParams": [{
-                    "name": "_endpoint",
-                    "value": "contacts"
-                  },
-                  {
-                    "name": "_sort",
-                    "value": "full_name"
-                  },
-                  {
-                    "name": "_order",
-                    "value": "asc"
-                  },
-                  {
-                    "name": "_labelKey",
-                    "value": "full_name"
-                  },
-                  {
-                    "name": "_valueKey",
-                    "value": "id"
-                  }
-                ],
-                "titleMap": [{
-                  "name": "LOADING...",
-                  "value": null
-                }],
-                "enableChangeEvent": true,
-                "customEvent": "selectContactNameOnChange"
-              },
-              {
-                "key": "select-stock-name",
-                "appearance": "outline",
-                "type": "select",
-                "floatLabel": "always",
-                "id": "16BC252F5C4",
-                "multiple": false,
-                "notitle": false,
-                "title": "Stocks",
-                "allowUnselect": false,
-                "wruxDynamic": true,
-                "wruxDynamicHook": "getList",
-                "wruxDynamicParams": [{
-                    "name": "_endpoint",
-                    "value": "stocks"
-                  },
-                  {
-                    "name": "_sort",
-                    "value": "name"
-                  },
-                  {
-                    "name": "_order",
-                    "value": "asc"
-                  },
-                  {
-                    "name": "_labelKey",
-                    "value": "name"
-                  },
-                  {
-                    "name": "_valueKey",
-                    "value": "symbol"
-                  },
-                  {
-                    "name": "_labelFormat",
-                    "value": "{{name}} ({{symbol}})"
-                  }
-                ],
-                "titleMap": [{
-                  "name": "LOADING...",
-                  "value": null
-                }],
-                "enableChangeEvent": true,
-                "customEvent": "selectStockNameOnChange"
-              }
-            ]
-          },
-          {
-            "key": "comment",
-            "appearance": "outline",
-            "floatLabel": "always",
-            "id": "16C1EF3DBB8",
-            "validationMessages": {
-              "required": "Required"
-            },
-            "type": "text",
-            "title": "Comment",
-            "disabled": false,
-            "notitle": false,
-            "readonly": false,
-            "wruxAutoCompleteHook": "",
-            "wruxAutoCompleteParams": [],
-            "wruxAutoCompleteResultValueOnly": false,
-            "wruxAutoCompleteApiSearch": true
-          },
-          {
-            "widget": "message",
-            "id": "16C1B4597E0",
-            "title": "<p>Account Number: <b>{{account-gref}}</b></p>\n<p>Contact: <b>{{select-contact-name}}</b></p>\n<p>Comment: <b>{{comment}}</b></p>\n",
-            "name": "title16C1EF4786A"
-          },
-          {
-            "color": "primary",
-            "customEvent": "",
-            "disabled": "disableInvalidSubmit",
-            "id": "16BC252F5C4",
-            "matbuttontype": "flat",
-            "name": "submit1552508822773",
-            "title": "Submit",
-            "type": "submit"
-          }
-        ],
-        "data": {}
-      }
-    },
-    {
-      "id": "16B9E76ED74",
-      "meta": {
-        "formType": "form",
-        "name": "Nested Form (WIP)",
-        "description": "",
-        "created": "Fri, Jun 28, 2019, 10:21:19 AM",
-        "modified": 1563914716043,
-        "groupId": "",
-        "templateId": "none",
-        "workflowId": "",
-        "size": "0 bytes",
-        "createdInitValue": "Fri, Jun 28, 2019, 10:21:19 AM",
-        "modifiedInitValue": "Wed, Jul 3, 2019, 1:42:02 PM",
-        "id": "16B9E76ED74",
-        "index": 1
-      },
-      "model": [{
-          "dnd": {
-            "index": 0,
-            "active": false,
-            "group": "layout",
-            "label": "Add to Ticket",
-            "children": [{
-                "dnd": {
-                  "index": 1,
-                  "active": false,
-                  "group": "common",
-                  "label": "Account",
-                  "type": "select",
-                  "fieldType": {
-                    "type": "UDF"
-                  },
-                  "id": "16B9E7845B0",
-                  "parentIndex": 0,
-                  "layoutIndex": null
-                },
-                "json": {
-                  "schema": {
-                    "properties": {
-                      "select16B9E7845B0": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "select16B9E7845B0"
-                    ]
-                  },
-                  "layout": [{
-                    "key": "select16B9E7845B0",
-                    "appearance": "outline",
-                    "type": "select",
-                    "floatLabel": "always",
-                    "id": "16B9E7845B0",
-                    "notitle": false,
-                    "title": "Account",
-                    "allowUnselect": false,
-                    "wruxDynamic": false,
-                    "wruxDynamicHook": "",
-                    "wruxDynamicParams": [],
-                    "titleMap": [{
-                        "name": "Option 1",
-                        "value": "option1"
-                      },
-                      {
-                        "name": "Option 2",
-                        "value": "option2"
-                      }
-                    ]
-                  }],
-                  "data": {}
-                }
-              },
-              {
-                "dnd": {
-                  "index": 2,
-                  "active": false,
-                  "group": "common",
-                  "label": "Amount",
-                  "type": "text",
-                  "fieldType": {
-                    "type": "UDF"
-                  },
-                  "id": "16B9E786889",
-                  "parentIndex": 0,
-                  "layoutIndex": null
-                },
-                "json": {
-                  "schema": {
-                    "properties": {
-                      "text16B9E786889": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "text16B9E786889"
-                    ]
-                  },
-                  "layout": [{
-                    "key": "text16B9E786889",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16B9E786889",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "integer",
-                    "prefix": "$",
-                    "title": "Amount",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false
-                  }],
-                  "data": {}
-                }
-              }
-            ],
-            "fieldType": {
-              "type": "UDF"
-            },
-            "type": "section",
-            "id": "16B9E768E98",
-            "parentIndex": null,
-            "layoutIndex": 0
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "select16B9E7845B0": {
-                  "type": "string"
-                },
-                "text16B9E786889": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "select16B9E7845B0",
-                "text16B9E786889"
-              ]
-            },
-            "layout": [{
-              "name": "array16BB8EDBE0E",
-              "type": "array",
-              "display": "flex",
-              "flex-direction": "column",
-              "justify-content": "space-between",
-              "align-content": "stretch",
-              "align-items": "stretch",
-              "flex-wrap": "wrap",
-              "expandable": false,
-              "expanded": true,
-              "id": "16B9E768E98",
-              "notitle": false,
-              "title": "Add to Ticket",
-              "items": [{
-                  "key": "select16B9E7845B0",
-                  "appearance": "outline",
-                  "type": "select",
-                  "floatLabel": "always",
-                  "id": "16B9E7845B0",
-                  "notitle": false,
-                  "title": "Account",
-                  "allowUnselect": false,
-                  "wruxDynamic": false,
-                  "wruxDynamicHook": "",
-                  "wruxDynamicParams": [],
-                  "titleMap": [{
-                      "name": "Option 1",
-                      "value": "option1"
-                    },
-                    {
-                      "name": "Option 2",
-                      "value": "option2"
-                    }
-                  ]
-                },
-                {
-                  "key": "text16B9E786889",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16B9E786889",
-                  "validationMessages": {
-                    "required": "Required"
-                  },
-                  "type": "integer",
-                  "prefix": "$",
-                  "title": "Amount",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false
-                }
-              ]
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 3,
-            "active": false,
-            "group": "common",
-            "label": "Select Transaction Type",
-            "type": "select",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16B9E770472",
-            "parentIndex": null,
-            "layoutIndex": 1
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "select16B9E770472": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "select16B9E770472"
-              ]
-            },
-            "layout": [{
-              "key": "select16B9E770472",
-              "appearance": "outline",
-              "type": "select",
-              "floatLabel": "always",
-              "id": "16B9E770472",
-              "multiple": false,
-              "notitle": false,
-              "title": "Select Transaction Type",
-              "allowUnselect": false,
-              "wruxDynamic": false,
-              "wruxDynamicHook": "",
-              "wruxDynamicParams": [],
-              "titleMap": [{
-                  "name": "Cash Receipt",
-                  "value": "cash-receipt"
-                },
-                {
-                  "name": "Another Choice",
-                  "value": "another-choice"
-                }
-              ]
-            }],
-            "data": {}
-          }
-        }
-      ],
-      "json": {
-        "schema": {
-          "type": "object",
-          "title": "My Form",
-          "properties": {
-            "select16B9E7845B0": {
-              "type": "string"
-            },
-            "text16B9E786889": {
-              "type": "string"
-            },
-            "select16B9E770472": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "select16B9E7845B0",
-            "text16B9E786889",
-            "select16B9E770472"
-          ]
-        },
-        "layout": [{
-            "name": "array16BB8EDBE0E",
-            "type": "array",
-            "display": "flex",
-            "flex-direction": "column",
-            "justify-content": "space-between",
-            "align-content": "stretch",
-            "align-items": "stretch",
-            "flex-wrap": "wrap",
-            "expandable": false,
-            "expanded": true,
-            "id": "16B9E768E98",
-            "notitle": false,
-            "title": "Add to Ticket",
-            "items": [{
-                "key": "select16B9E7845B0",
-                "appearance": "outline",
-                "type": "select",
-                "floatLabel": "always",
-                "id": "16B9E7845B0",
-                "notitle": false,
-                "title": "Account",
-                "allowUnselect": false,
-                "wruxDynamic": false,
-                "wruxDynamicHook": "",
-                "wruxDynamicParams": [],
-                "titleMap": [{
-                    "name": "Option 1",
-                    "value": "option1"
-                  },
-                  {
-                    "name": "Option 2",
-                    "value": "option2"
-                  }
-                ]
-              },
-              {
-                "key": "text16B9E786889",
-                "appearance": "outline",
-                "floatLabel": "always",
-                "id": "16B9E786889",
-                "validationMessages": {
-                  "required": "Required"
-                },
-                "type": "integer",
-                "prefix": "$",
-                "title": "Amount",
-                "disabled": false,
-                "notitle": false,
-                "readonly": false
-              }
-            ]
-          },
-          {
-            "key": "select16B9E770472",
-            "appearance": "outline",
-            "type": "select",
-            "floatLabel": "always",
-            "id": "16B9E770472",
-            "multiple": false,
-            "notitle": false,
-            "title": "Select Transaction Type",
-            "allowUnselect": false,
-            "wruxDynamic": false,
-            "wruxDynamicHook": "",
-            "wruxDynamicParams": [],
-            "titleMap": [{
-                "name": "Cash Receipt",
-                "value": "cash-receipt"
-              },
-              {
-                "name": "Another Choice",
-                "value": "another-choice"
-              }
-            ]
-          }
-        ],
-        "data": {}
-      }
-    },
-    {
-      "id": "16BE1173B3B",
-      "meta": {
-        "formType": "form",
-        "name": "My Datasource Test (WIP)",
-        "description": "",
-        "created": "Thu, Jul 11, 2019, 8:51:35 AM",
-        "modified": 1564604827626,
-        "groupId": "",
-        "templateId": "none",
-        "workflowId": "",
-        "size": "0 bytes",
-        "createdInitValue": "Thu, Jul 11, 2019, 8:51:35 AM",
-        "modifiedInitValue": "Fri, Jul 12, 2019, 7:48:29 AM",
-        "id": "16BE1173B3B",
-        "index": 2
-      },
-      "model": [{
-          "dnd": {
-            "index": 0,
-            "active": false,
-            "group": "other",
-            "label": "cashReceiptDS",
-            "type": "datasource",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16BE116EF8C",
-            "parentIndex": null,
-            "layoutIndex": 0
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "cashReceiptDS": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "key": "cashReceiptDS",
-              "id": "16BE116EF8C",
-              "type": "datasource",
-              "wruxDynamicHook": "getCashReceiptDS",
-              "wruxDynamicParams": [{
-                "name": "auth",
-                "value": "false"
-              }]
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 1,
-            "active": false,
-            "group": "common",
-            "label": "units-increase",
-            "type": "hidden",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16BE2277FBA",
-            "parentIndex": null,
-            "layoutIndex": 1
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "units-increase": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "id": "16BE2277FBA",
-              "type": "hidden"
-            }],
-            "data": {
-              "units-increase": "{{cashReceiptDS.units-increase}}"
-            }
-          }
-        },
-        {
-          "dnd": {
-            "index": 2,
-            "active": false,
-            "group": "other",
-            "label": "<div>\n    <strong>Account Number: ({{cashReceiptDS.id}})</strong>\n</div>\n<hr />\n<table class=\"table full-width\">\n    <tr>\n        <th>units increase</th>\n        <th>units decrease</th>\n        <th>net change</th>\n    </tr>\n    <tr>\n        <td>{{cashReceiptDS.units-increase}}</td>\n        <td>{{cashReceiptDS.units-decrease}}</td>\n        <td>{{cashReceiptDS.net-change}}</td>\n    </tr>\n</table>\n<hr />\n<p>\n     <b>{{cashReceiptDS.accounts.account-name}}</b><br>\n     {{cashReceiptDS.accounts.account-gref}}\n</p>",
-            "type": "custom",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16BE153B6E6",
-            "parentIndex": null,
-            "layoutIndex": 2
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "title16C49AC310B": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "widget": "message",
-              "id": "16BE153B6E6",
-              "title": "<div>\n    <strong>Account Number: ({{cashReceiptDS.id}})</strong>\n</div>\n<hr />\n<table class=\"table full-width\">\n    <tr>\n        <th>units increase</th>\n        <th>units decrease</th>\n        <th>net change</th>\n    </tr>\n    <tr>\n        <td>{{cashReceiptDS.units-increase}}</td>\n        <td>{{cashReceiptDS.units-decrease}}</td>\n        <td>{{cashReceiptDS.net-change}}</td>\n    </tr>\n</table>\n<hr />\n<p>\n     <b>{{cashReceiptDS.accounts.account-name}}</b><br>\n     {{cashReceiptDS.accounts.account-gref}}\n</p>"
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 3,
-            "active": true,
-            "group": "common",
-            "label": "Account Number",
-            "type": "text",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16BE116E069",
-            "parentIndex": null,
-            "layoutIndex": 3
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "account-gref": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "key": "account-gref",
-              "appearance": "outline",
-              "floatLabel": "always",
-              "id": "16BE116E069",
-              "validationMessages": {
-                "required": "Required"
-              },
-              "type": "text",
-              "prefix": "Account Number: ",
-              "title": "Account Number",
-              "disabled": false,
-              "notitle": true,
-              "readonly": true,
-              "wruxAutoCompleteHook": "",
-              "wruxAutoCompleteParams": [],
-              "wruxAutoCompleteResultValueOnly": false,
-              "wruxAutoCompleteApiSearch": true,
-              "enableChangeEvent": false,
-              "customEvent": ""
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 4,
-            "active": false,
-            "group": "common",
-            "label": "Input",
-            "type": "text",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16C499A6929",
-            "parentIndex": null,
-            "layoutIndex": 4
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "account-name": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "key": "account-name",
-              "appearance": "outline",
-              "floatLabel": "always",
-              "id": "16C499A6929",
-              "validationMessages": {
-                "required": "Required"
-              },
-              "type": "text",
-              "prefix": "Account Name: ",
-              "title": "Input",
-              "disabled": false,
-              "notitle": true,
-              "readonly": true,
-              "wruxAutoCompleteHook": "",
-              "wruxAutoCompleteParams": [],
-              "wruxAutoCompleteResultValueOnly": false,
-              "wruxAutoCompleteApiSearch": true,
-              "enableChangeEvent": false,
-              "customEvent": ""
-            }],
-            "data": {
-              "account-name": "{{cashReceiptDS.accounts.account-name}}"
-            }
-          }
-        },
-        {
-          "dnd": {
-            "index": 5,
-            "active": false,
-            "group": "common",
-            "label": "Submit",
-            "type": "button",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16BE116D577",
-            "parentIndex": null,
-            "layoutIndex": 5
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "submit16BE116D577": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "color": "primary",
-              "customEvent": "",
-              "disabled": "disableInvalidSubmit",
-              "id": "16BE116D577",
-              "matbuttontype": "flat",
-              "name": "submit16BE116D577",
-              "title": "Submit",
-              "type": "submit"
-            }]
-          }
-        }
-      ],
-      "json": {
-        "schema": {
-          "type": "object",
-          "title": "My New Form",
-          "properties": {
-            "cashReceiptDS": {
-              "type": "string"
-            },
-            "units-increase": {
-              "type": "string"
-            },
-            "title16C49AC310B": {
-              "type": "string"
-            },
-            "account-gref": {
-              "type": "string"
-            },
-            "account-name": {
-              "type": "string"
-            },
-            "submit16BE116D577": {
-              "type": "string"
-            }
-          },
-          "required": []
-        },
-        "layout": [{
-            "key": "cashReceiptDS",
-            "id": "16BE116EF8C",
-            "type": "datasource",
-            "wruxDynamicHook": "getCashReceiptDS",
-            "wruxDynamicParams": [{
-              "name": "auth",
-              "value": "false"
-            }]
-          },
-          {
-            "id": "16BE2277FBA",
-            "type": "hidden"
-          },
-          {
-            "widget": "message",
-            "id": "16BE153B6E6",
-            "title": "<div>\n    <strong>Account Number: ({{cashReceiptDS.id}})</strong>\n</div>\n<hr />\n<table class=\"table full-width\">\n    <tr>\n        <th>units increase</th>\n        <th>units decrease</th>\n        <th>net change</th>\n    </tr>\n    <tr>\n        <td>{{cashReceiptDS.units-increase}}</td>\n        <td>{{cashReceiptDS.units-decrease}}</td>\n        <td>{{cashReceiptDS.net-change}}</td>\n    </tr>\n</table>\n<hr />\n<p>\n     <b>{{cashReceiptDS.accounts.account-name}}</b><br>\n     {{cashReceiptDS.accounts.account-gref}}\n</p>"
-          },
-          {
-            "key": "account-gref",
-            "appearance": "outline",
-            "floatLabel": "always",
-            "id": "16BE116E069",
-            "validationMessages": {
-              "required": "Required"
-            },
-            "type": "text",
-            "prefix": "Account Number: ",
-            "title": "Account Number",
-            "disabled": false,
-            "notitle": true,
-            "readonly": true,
-            "wruxAutoCompleteHook": "",
-            "wruxAutoCompleteParams": [],
-            "wruxAutoCompleteResultValueOnly": false,
-            "wruxAutoCompleteApiSearch": true,
-            "enableChangeEvent": false,
-            "customEvent": ""
-          },
-          {
-            "key": "account-name",
-            "appearance": "outline",
-            "floatLabel": "always",
-            "id": "16C499A6929",
-            "validationMessages": {
-              "required": "Required"
-            },
-            "type": "text",
-            "prefix": "Account Name: ",
-            "title": "Input",
-            "disabled": false,
-            "notitle": true,
-            "readonly": true,
-            "wruxAutoCompleteHook": "",
-            "wruxAutoCompleteParams": [],
-            "wruxAutoCompleteResultValueOnly": false,
-            "wruxAutoCompleteApiSearch": true,
-            "enableChangeEvent": false,
-            "customEvent": ""
-          },
-          {
-            "color": "primary",
-            "customEvent": "",
-            "disabled": "disableInvalidSubmit",
-            "id": "16BE116D577",
-            "matbuttontype": "flat",
-            "name": "submit16BE116D577",
-            "title": "Submit",
-            "type": "submit"
-          }
-        ],
-        "data": {
-          "units-increase": "{{cashReceiptDS.units-increase}}",
-          "account-name": "{{cashReceiptDS.accounts.account-name}}"
-        }
-      }
-    },
-    {
-      "id": "16BFB5CDC7B",
-      "meta": {
-        "formType": "form",
-        "name": "AutoComplete Test (WIP)",
-        "description": "",
-        "created": "Tue, Jul 16, 2019, 11:17:20 AM",
-        "modified": 1563991728828,
-        "groupId": "",
-        "templateId": "none",
-        "workflowId": "",
-        "size": "0 bytes",
-        "id": "16BFB5CDC7B",
-        "index": 3,
-        "createdInitValue": "Tue, Jul 16, 2019, 11:17:20 AM",
-        "modifiedInitValue": "Thu, Jul 18, 2019, 3:43:17 PM"
-      },
-      "model": [{
-          "dnd": {
-            "index": 0,
-            "active": false,
-            "group": "common",
-            "label": "Account Number",
-            "type": "text",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16C069BC747",
-            "parentIndex": null,
-            "layoutIndex": 0
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "account-gref": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "account-gref"
-              ]
-            },
-            "layout": [{
-              "key": "account-gref",
-              "appearance": "outline",
-              "floatLabel": "always",
-              "id": "16C069BC747",
-              "validationMessages": {
-                "required": "Required"
-              },
-              "type": "text",
-              "title": "Account Number",
-              "disabled": false,
-              "notitle": false,
-              "readonly": false,
-              "wruxAutoCompleteHook": "",
-              "wruxAutoCompleteParams": [],
-              "wruxAutoCompleteResultValueOnly": false,
-              "wruxAutoCompleteApiSearch": true
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 1,
-            "active": true,
-            "group": "common",
-            "label": "Payor",
-            "type": "text",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16BFB5C157E",
-            "parentIndex": null,
-            "layoutIndex": 1
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "payor": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "payor"
-              ]
-            },
-            "layout": [{
-              "key": "payor",
-              "appearance": "outline",
-              "floatLabel": "always",
-              "id": "16BFB5C157E",
-              "validationMessages": {
-                "required": "Required"
-              },
-              "type": "text",
-              "title": "Payor",
-              "disabled": false,
-              "notitle": false,
-              "readonly": false,
-              "wruxAutoCompleteHook": "lookupPayors",
-              "wruxAutoCompleteParams": [{
-                  "name": "account-gref",
-                  "value": "{{account-gref}}"
-                },
-                {
-                  "name": "_sort",
-                  "value": "label"
-                },
-                {
-                  "name": "_order",
-                  "value": "asc"
-                }
-              ],
-              "wruxAutoCompleteResultValueOnly": true,
-              "wruxAutoCompleteApiSearch": true,
-              "enableChangeEvent": true,
-              "customEvent": "payorOnChange"
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 2,
-            "active": false,
-            "group": "common",
-            "label": "Do It!",
-            "type": "button",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16BFB5CBAA8",
-            "parentIndex": null,
-            "layoutIndex": 2
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "submit16BFB5CBAA8": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "color": "primary",
-              "customEvent": "",
-              "disabled": "disableInvalidSubmit",
-              "id": "16BFB5CBAA8",
-              "matbuttontype": "flat",
-              "name": "submit16BFB5CBAA8",
-              "title": "Do It!",
-              "type": "submit"
-            }]
-          }
-        }
-      ],
-      "json": {
-        "schema": {
-          "type": "object",
-          "title": "My Form",
-          "properties": {
-            "account-gref": {
-              "type": "string"
-            },
-            "payor": {
-              "type": "string"
-            },
-            "submit16BFB5CBAA8": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "account-gref",
-            "payor"
-          ]
-        },
-        "layout": [{
-            "key": "account-gref",
-            "appearance": "outline",
-            "floatLabel": "always",
-            "id": "16C069BC747",
-            "validationMessages": {
-              "required": "Required"
-            },
-            "type": "text",
-            "title": "Account Number",
-            "disabled": false,
-            "notitle": false,
-            "readonly": false,
-            "wruxAutoCompleteHook": "",
-            "wruxAutoCompleteParams": [],
-            "wruxAutoCompleteResultValueOnly": false,
-            "wruxAutoCompleteApiSearch": true
-          },
-          {
-            "key": "payor",
-            "appearance": "outline",
-            "floatLabel": "always",
-            "id": "16BFB5C157E",
-            "validationMessages": {
-              "required": "Required"
-            },
-            "type": "text",
-            "title": "Payor",
-            "disabled": false,
-            "notitle": false,
-            "readonly": false,
-            "wruxAutoCompleteHook": "lookupPayors",
-            "wruxAutoCompleteParams": [{
-                "name": "account-gref",
-                "value": "{{account-gref}}"
-              },
-              {
-                "name": "_sort",
-                "value": "label"
-              },
-              {
-                "name": "_order",
-                "value": "asc"
-              }
-            ],
-            "wruxAutoCompleteResultValueOnly": true,
-            "wruxAutoCompleteApiSearch": true,
-            "enableChangeEvent": true,
-            "customEvent": "payorOnChange"
-          },
-          {
-            "color": "primary",
-            "customEvent": "",
-            "disabled": "disableInvalidSubmit",
-            "id": "16BFB5CBAA8",
-            "matbuttontype": "flat",
-            "name": "submit16BFB5CBAA8",
-            "title": "Do It!",
-            "type": "submit"
-          }
-        ],
-        "data": {}
-      }
-    },
+  "forms": [
     {
       "id": "16C20972E89",
       "meta": {
@@ -1636,7 +17,8 @@
         "id": "16C20972E89",
         "index": 4
       },
-      "model": [{
+      "model": [
+        {
           "dnd": {
             "index": 0,
             "active": false,
@@ -1660,14 +42,16 @@
               },
               "required": []
             },
-            "layout": [{
-              "key": "cashReceiptDS",
-              "id": "16BDD72F943",
-              "type": "datasource",
-              "wruxDynamicHook": "getCashReceiptDS",
-              "wruxDynamicParams": [],
-              "hidden": false
-            }],
+            "layout": [
+              {
+                "key": "cashReceiptDS",
+                "id": "16BDD72F943",
+                "type": "datasource",
+                "wruxDynamicHook": "getCashReceiptDS",
+                "wruxDynamicParams": [],
+                "hidden": false
+              }
+            ],
             "data": {}
           }
         },
@@ -1695,12 +79,14 @@
               },
               "required": []
             },
-            "layout": [{
-              "key": "account-gref",
-              "id": "16C06834C1B",
-              "type": "hidden",
-              "hidden": false
-            }],
+            "layout": [
+              {
+                "key": "account-gref",
+                "id": "16C06834C1B",
+                "type": "hidden",
+                "hidden": false
+              }
+            ],
             "data": {}
           }
         },
@@ -1710,7 +96,8 @@
             "active": false,
             "group": "layout",
             "label": "Transaction Identification",
-            "children": [{
+            "children": [
+              {
                 "dnd": {
                   "index": 3,
                   "active": true,
@@ -1732,42 +119,43 @@
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "source-portfolio"
-                    ]
+                    "required": ["source-portfolio"]
                   },
-                  "layout": [{
-                    "key": "source-portfolio",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16BFBE98AA4",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "text",
-                    "title": "Source Portfolio",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "wruxAutoCompleteHook": "autocompleteLookup",
-                    "wruxAutoCompleteParams": [{
-                        "name": "_endpoint",
-                        "value": "portfolios"
+                  "layout": [
+                    {
+                      "key": "source-portfolio",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16BFBE98AA4",
+                      "validationMessages": {
+                        "required": "Required"
                       },
-                      {
-                        "name": "_labelKey",
-                        "value": "portfolioShortName"
-                      },
-                      {
-                        "name": "_valueKey",
-                        "value": "portfolioNumber"
-                      }
-                    ],
-                    "wruxAutoCompleteResultValueOnly": true,
-                    "wruxAutoCompleteApiSearch": true,
-                    "enableChangeEvent": true,
-                    "customEvent": "sourcePortfolioOnChange"
-                  }],
+                      "type": "text",
+                      "title": "Source Portfolio",
+                      "disabled": false,
+                      "notitle": false,
+                      "readonly": false,
+                      "wruxAutoCompleteHook": "autocompleteLookup",
+                      "wruxAutoCompleteParams": [
+                        {
+                          "name": "_endpoint",
+                          "value": "portfolios"
+                        },
+                        {
+                          "name": "_labelKey",
+                          "value": "portfolioShortName"
+                        },
+                        {
+                          "name": "_valueKey",
+                          "value": "portfolioNumber"
+                        }
+                      ],
+                      "wruxAutoCompleteResultValueOnly": true,
+                      "wruxAutoCompleteApiSearch": true,
+                      "enableChangeEvent": true,
+                      "customEvent": "sourcePortfolioOnChange"
+                    }
+                  ],
                   "data": {}
                 }
               },
@@ -1793,32 +181,32 @@
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "amount"
-                    ]
+                    "required": ["amount"]
                   },
-                  "layout": [{
-                    "key": "amount",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16B654723F6",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "number",
-                    "pattern": "^\\S+@\\S+$",
-                    "suffix": "$",
-                    "title": "Enter Amount",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "wruxAutoCompleteHook": "",
-                    "wruxAutoCompleteParams": [],
-                    "wruxAutoCompleteResultValueOnly": false,
-                    "wruxAutoCompleteApiSearch": true,
-                    "enableChangeEvent": false,
-                    "customEvent": ""
-                  }],
+                  "layout": [
+                    {
+                      "key": "amount",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16B654723F6",
+                      "validationMessages": {
+                        "required": "Required"
+                      },
+                      "type": "number",
+                      "pattern": "^\\S+@\\S+$",
+                      "suffix": "$",
+                      "title": "Enter Amount",
+                      "disabled": false,
+                      "notitle": false,
+                      "readonly": false,
+                      "wruxAutoCompleteHook": "",
+                      "wruxAutoCompleteParams": [],
+                      "wruxAutoCompleteResultValueOnly": false,
+                      "wruxAutoCompleteApiSearch": true,
+                      "enableChangeEvent": false,
+                      "customEvent": ""
+                    }
+                  ],
                   "data": {
                     "amount": "1000"
                   }
@@ -1849,15 +237,17 @@
                     },
                     "required": []
                   },
-                  "layout": [{
-                    "key": "effective-date",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16B56D13BDB",
-                    "notitle": false,
-                    "readonly": false,
-                    "title": "Select date for Transaction"
-                  }],
+                  "layout": [
+                    {
+                      "key": "effective-date",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16B56D13BDB",
+                      "notitle": false,
+                      "readonly": false,
+                      "title": "Select date for Transaction"
+                    }
+                  ],
                   "data": {
                     "effective-date": "2019-08-05"
                   }
@@ -1887,38 +277,41 @@
                     },
                     "required": []
                   },
-                  "layout": [{
-                    "key": "source-of-funds",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16BFBEBAF67",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "text",
-                    "title": "Source Of Funds",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "wruxAutoCompleteHook": "autocompleteLookup",
-                    "wruxAutoCompleteParams": [{
-                        "name": "_endpoint",
-                        "value": "funds-source"
+                  "layout": [
+                    {
+                      "key": "source-of-funds",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16BFBEBAF67",
+                      "validationMessages": {
+                        "required": "Required"
                       },
-                      {
-                        "name": "_labelKey",
-                        "value": "description"
-                      },
-                      {
-                        "name": "_valueKey",
-                        "value": "number"
-                      }
-                    ],
-                    "wruxAutoCompleteResultValueOnly": true,
-                    "wruxAutoCompleteApiSearch": true,
-                    "enableChangeEvent": false,
-                    "customEvent": ""
-                  }],
+                      "type": "text",
+                      "title": "Source Of Funds",
+                      "disabled": false,
+                      "notitle": false,
+                      "readonly": false,
+                      "wruxAutoCompleteHook": "autocompleteLookup",
+                      "wruxAutoCompleteParams": [
+                        {
+                          "name": "_endpoint",
+                          "value": "funds-source"
+                        },
+                        {
+                          "name": "_labelKey",
+                          "value": "description"
+                        },
+                        {
+                          "name": "_valueKey",
+                          "value": "number"
+                        }
+                      ],
+                      "wruxAutoCompleteResultValueOnly": true,
+                      "wruxAutoCompleteApiSearch": true,
+                      "enableChangeEvent": false,
+                      "customEvent": ""
+                    }
+                  ],
                   "data": {}
                 }
               },
@@ -1946,38 +339,41 @@
                     },
                     "required": []
                   },
-                  "layout": [{
-                    "key": "funds-location",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16BFBED3F1C",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "text",
-                    "title": "Funds Location",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "wruxAutoCompleteHook": "autocompleteLookup",
-                    "wruxAutoCompleteParams": [{
-                        "name": "_endpoint",
-                        "value": "funds-location"
+                  "layout": [
+                    {
+                      "key": "funds-location",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16BFBED3F1C",
+                      "validationMessages": {
+                        "required": "Required"
                       },
-                      {
-                        "name": "_labelKey",
-                        "value": "description"
-                      },
-                      {
-                        "name": "_valueKey",
-                        "value": "number"
-                      }
-                    ],
-                    "wruxAutoCompleteResultValueOnly": true,
-                    "wruxAutoCompleteApiSearch": true,
-                    "enableChangeEvent": false,
-                    "customEvent": ""
-                  }],
+                      "type": "text",
+                      "title": "Funds Location",
+                      "disabled": false,
+                      "notitle": false,
+                      "readonly": false,
+                      "wruxAutoCompleteHook": "autocompleteLookup",
+                      "wruxAutoCompleteParams": [
+                        {
+                          "name": "_endpoint",
+                          "value": "funds-location"
+                        },
+                        {
+                          "name": "_labelKey",
+                          "value": "description"
+                        },
+                        {
+                          "name": "_valueKey",
+                          "value": "number"
+                        }
+                      ],
+                      "wruxAutoCompleteResultValueOnly": true,
+                      "wruxAutoCompleteApiSearch": true,
+                      "enableChangeEvent": false,
+                      "customEvent": ""
+                    }
+                  ],
                   "data": {}
                 }
               },
@@ -2005,26 +401,28 @@
                     },
                     "required": []
                   },
-                  "layout": [{
-                    "key": "account-reference",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16BE27823DE",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "text",
-                    "title": "Account Reference",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "wruxAutoCompleteHook": "",
-                    "wruxAutoCompleteParams": [],
-                    "wruxAutoCompleteResultValueOnly": false,
-                    "wruxAutoCompleteApiSearch": true,
-                    "enableChangeEvent": false,
-                    "customEvent": ""
-                  }],
+                  "layout": [
+                    {
+                      "key": "account-reference",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16BE27823DE",
+                      "validationMessages": {
+                        "required": "Required"
+                      },
+                      "type": "text",
+                      "title": "Account Reference",
+                      "disabled": false,
+                      "notitle": false,
+                      "readonly": false,
+                      "wruxAutoCompleteHook": "",
+                      "wruxAutoCompleteParams": [],
+                      "wruxAutoCompleteResultValueOnly": false,
+                      "wruxAutoCompleteApiSearch": true,
+                      "enableChangeEvent": false,
+                      "customEvent": ""
+                    }
+                  ],
                   "data": {}
                 }
               },
@@ -2052,24 +450,26 @@
                     },
                     "required": []
                   },
-                  "layout": [{
-                    "key": "routing-symbol",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16BE27882E9",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "text",
-                    "title": "Routing Symbol",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "wruxAutoCompleteHook": "",
-                    "wruxAutoCompleteParams": [],
-                    "wruxAutoCompleteResultValueOnly": false,
-                    "hidden": false
-                  }],
+                  "layout": [
+                    {
+                      "key": "routing-symbol",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16BE27882E9",
+                      "validationMessages": {
+                        "required": "Required"
+                      },
+                      "type": "text",
+                      "title": "Routing Symbol",
+                      "disabled": false,
+                      "notitle": false,
+                      "readonly": false,
+                      "wruxAutoCompleteHook": "",
+                      "wruxAutoCompleteParams": [],
+                      "wruxAutoCompleteResultValueOnly": false,
+                      "hidden": false
+                    }
+                  ],
                   "data": {}
                 }
               }
@@ -2109,191 +509,194 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "source-portfolio",
-                "amount"
-              ]
+              "required": ["source-portfolio", "amount"]
             },
-            "layout": [{
-              "type": "div",
-              "display": "flex",
-              "flex-direction": "column",
-              "justify-content": "space-between",
-              "align-content": "stretch",
-              "align-items": "stretch",
-              "flex-wrap": "wrap",
-              "expandable": true,
-              "expanded": true,
-              "id": "16BDBEAFFF1",
-              "notitle": false,
-              "title": "Transaction Identification",
-              "items": [{
-                  "key": "source-portfolio",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16BFBE98AA4",
-                  "validationMessages": {
-                    "required": "Required"
-                  },
-                  "type": "text",
-                  "title": "Source Portfolio",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "wruxAutoCompleteHook": "autocompleteLookup",
-                  "wruxAutoCompleteParams": [{
-                      "name": "_endpoint",
-                      "value": "portfolios"
+            "layout": [
+              {
+                "type": "div",
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "space-between",
+                "align-content": "stretch",
+                "align-items": "stretch",
+                "flex-wrap": "wrap",
+                "expandable": true,
+                "expanded": true,
+                "id": "16BDBEAFFF1",
+                "notitle": false,
+                "title": "Transaction Identification",
+                "items": [
+                  {
+                    "key": "source-portfolio",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16BFBE98AA4",
+                    "validationMessages": {
+                      "required": "Required"
                     },
-                    {
-                      "name": "_labelKey",
-                      "value": "portfolioShortName"
-                    },
-                    {
-                      "name": "_valueKey",
-                      "value": "portfolioNumber"
-                    }
-                  ],
-                  "wruxAutoCompleteResultValueOnly": true,
-                  "wruxAutoCompleteApiSearch": true,
-                  "enableChangeEvent": true,
-                  "customEvent": "sourcePortfolioOnChange"
-                },
-                {
-                  "key": "amount",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16B654723F6",
-                  "validationMessages": {
-                    "required": "Required"
+                    "type": "text",
+                    "title": "Source Portfolio",
+                    "disabled": false,
+                    "notitle": false,
+                    "readonly": false,
+                    "wruxAutoCompleteHook": "autocompleteLookup",
+                    "wruxAutoCompleteParams": [
+                      {
+                        "name": "_endpoint",
+                        "value": "portfolios"
+                      },
+                      {
+                        "name": "_labelKey",
+                        "value": "portfolioShortName"
+                      },
+                      {
+                        "name": "_valueKey",
+                        "value": "portfolioNumber"
+                      }
+                    ],
+                    "wruxAutoCompleteResultValueOnly": true,
+                    "wruxAutoCompleteApiSearch": true,
+                    "enableChangeEvent": true,
+                    "customEvent": "sourcePortfolioOnChange"
                   },
-                  "type": "number",
-                  "pattern": "^\\S+@\\S+$",
-                  "suffix": "$",
-                  "title": "Enter Amount",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "wruxAutoCompleteHook": "",
-                  "wruxAutoCompleteParams": [],
-                  "wruxAutoCompleteResultValueOnly": false,
-                  "wruxAutoCompleteApiSearch": true,
-                  "enableChangeEvent": false,
-                  "customEvent": ""
-                },
-                {
-                  "key": "effective-date",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16B56D13BDB",
-                  "notitle": false,
-                  "readonly": false,
-                  "title": "Select date for Transaction"
-                },
-                {
-                  "key": "source-of-funds",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16BFBEBAF67",
-                  "validationMessages": {
-                    "required": "Required"
-                  },
-                  "type": "text",
-                  "title": "Source Of Funds",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "wruxAutoCompleteHook": "autocompleteLookup",
-                  "wruxAutoCompleteParams": [{
-                      "name": "_endpoint",
-                      "value": "funds-source"
+                  {
+                    "key": "amount",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16B654723F6",
+                    "validationMessages": {
+                      "required": "Required"
                     },
-                    {
-                      "name": "_labelKey",
-                      "value": "description"
-                    },
-                    {
-                      "name": "_valueKey",
-                      "value": "number"
-                    }
-                  ],
-                  "wruxAutoCompleteResultValueOnly": true,
-                  "wruxAutoCompleteApiSearch": true,
-                  "enableChangeEvent": false,
-                  "customEvent": ""
-                },
-                {
-                  "key": "funds-location",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16BFBED3F1C",
-                  "validationMessages": {
-                    "required": "Required"
+                    "type": "number",
+                    "pattern": "^\\S+@\\S+$",
+                    "suffix": "$",
+                    "title": "Enter Amount",
+                    "disabled": false,
+                    "notitle": false,
+                    "readonly": false,
+                    "wruxAutoCompleteHook": "",
+                    "wruxAutoCompleteParams": [],
+                    "wruxAutoCompleteResultValueOnly": false,
+                    "wruxAutoCompleteApiSearch": true,
+                    "enableChangeEvent": false,
+                    "customEvent": ""
                   },
-                  "type": "text",
-                  "title": "Funds Location",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "wruxAutoCompleteHook": "autocompleteLookup",
-                  "wruxAutoCompleteParams": [{
-                      "name": "_endpoint",
-                      "value": "funds-location"
-                    },
-                    {
-                      "name": "_labelKey",
-                      "value": "description"
-                    },
-                    {
-                      "name": "_valueKey",
-                      "value": "number"
-                    }
-                  ],
-                  "wruxAutoCompleteResultValueOnly": true,
-                  "wruxAutoCompleteApiSearch": true,
-                  "enableChangeEvent": false,
-                  "customEvent": ""
-                },
-                {
-                  "key": "account-reference",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16BE27823DE",
-                  "validationMessages": {
-                    "required": "Required"
+                  {
+                    "key": "effective-date",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16B56D13BDB",
+                    "notitle": false,
+                    "readonly": false,
+                    "title": "Select date for Transaction"
                   },
-                  "type": "text",
-                  "title": "Account Reference",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "wruxAutoCompleteHook": "",
-                  "wruxAutoCompleteParams": [],
-                  "wruxAutoCompleteResultValueOnly": false,
-                  "wruxAutoCompleteApiSearch": true,
-                  "enableChangeEvent": false,
-                  "customEvent": ""
-                },
-                {
-                  "key": "routing-symbol",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16BE27882E9",
-                  "validationMessages": {
-                    "required": "Required"
+                  {
+                    "key": "source-of-funds",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16BFBEBAF67",
+                    "validationMessages": {
+                      "required": "Required"
+                    },
+                    "type": "text",
+                    "title": "Source Of Funds",
+                    "disabled": false,
+                    "notitle": false,
+                    "readonly": false,
+                    "wruxAutoCompleteHook": "autocompleteLookup",
+                    "wruxAutoCompleteParams": [
+                      {
+                        "name": "_endpoint",
+                        "value": "funds-source"
+                      },
+                      {
+                        "name": "_labelKey",
+                        "value": "description"
+                      },
+                      {
+                        "name": "_valueKey",
+                        "value": "number"
+                      }
+                    ],
+                    "wruxAutoCompleteResultValueOnly": true,
+                    "wruxAutoCompleteApiSearch": true,
+                    "enableChangeEvent": false,
+                    "customEvent": ""
                   },
-                  "type": "text",
-                  "title": "Routing Symbol",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "wruxAutoCompleteHook": "",
-                  "wruxAutoCompleteParams": [],
-                  "wruxAutoCompleteResultValueOnly": false,
-                  "hidden": false
-                }
-              ]
-            }],
+                  {
+                    "key": "funds-location",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16BFBED3F1C",
+                    "validationMessages": {
+                      "required": "Required"
+                    },
+                    "type": "text",
+                    "title": "Funds Location",
+                    "disabled": false,
+                    "notitle": false,
+                    "readonly": false,
+                    "wruxAutoCompleteHook": "autocompleteLookup",
+                    "wruxAutoCompleteParams": [
+                      {
+                        "name": "_endpoint",
+                        "value": "funds-location"
+                      },
+                      {
+                        "name": "_labelKey",
+                        "value": "description"
+                      },
+                      {
+                        "name": "_valueKey",
+                        "value": "number"
+                      }
+                    ],
+                    "wruxAutoCompleteResultValueOnly": true,
+                    "wruxAutoCompleteApiSearch": true,
+                    "enableChangeEvent": false,
+                    "customEvent": ""
+                  },
+                  {
+                    "key": "account-reference",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16BE27823DE",
+                    "validationMessages": {
+                      "required": "Required"
+                    },
+                    "type": "text",
+                    "title": "Account Reference",
+                    "disabled": false,
+                    "notitle": false,
+                    "readonly": false,
+                    "wruxAutoCompleteHook": "",
+                    "wruxAutoCompleteParams": [],
+                    "wruxAutoCompleteResultValueOnly": false,
+                    "wruxAutoCompleteApiSearch": true,
+                    "enableChangeEvent": false,
+                    "customEvent": ""
+                  },
+                  {
+                    "key": "routing-symbol",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16BE27882E9",
+                    "validationMessages": {
+                      "required": "Required"
+                    },
+                    "type": "text",
+                    "title": "Routing Symbol",
+                    "disabled": false,
+                    "notitle": false,
+                    "readonly": false,
+                    "wruxAutoCompleteHook": "",
+                    "wruxAutoCompleteParams": [],
+                    "wruxAutoCompleteResultValueOnly": false,
+                    "hidden": false
+                  }
+                ]
+              }
+            ],
             "data": {
               "amount": "1000",
               "effective-date": "2019-08-05"
@@ -2306,7 +709,8 @@
             "active": false,
             "group": "layout",
             "label": "Receipt Information",
-            "children": [{
+            "children": [
+              {
                 "dnd": {
                   "index": 11,
                   "active": false,
@@ -2330,28 +734,31 @@
                     },
                     "required": []
                   },
-                  "layout": [{
-                    "key": "payor-on-file",
-                    "type": "checkbox",
-                    "color": "primary",
-                    "customEvent": "",
-                    "id": "16BE273737B",
-                    "readonly": true,
-                    "title": "Payor On File",
-                    "wruxDynamic": false,
-                    "wruxDynamicHook": "",
-                    "wruxDynamicParams": [],
-                    "titleMap": [{
-                        "name": "Option 1",
-                        "value": "option1"
-                      },
-                      {
-                        "name": "Option 2",
-                        "value": "option2"
-                      }
-                    ],
-                    "hidden": false
-                  }],
+                  "layout": [
+                    {
+                      "key": "payor-on-file",
+                      "type": "checkbox",
+                      "color": "primary",
+                      "customEvent": "",
+                      "id": "16BE273737B",
+                      "readonly": true,
+                      "title": "Payor On File",
+                      "wruxDynamic": false,
+                      "wruxDynamicHook": "",
+                      "wruxDynamicParams": [],
+                      "titleMap": [
+                        {
+                          "name": "Option 1",
+                          "value": "option1"
+                        },
+                        {
+                          "name": "Option 2",
+                          "value": "option2"
+                        }
+                      ],
+                      "hidden": false
+                    }
+                  ],
                   "data": {
                     "payor-on-file": true
                   }
@@ -2379,42 +786,43 @@
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "payor"
-                    ]
+                    "required": ["payor"]
                   },
-                  "layout": [{
-                    "key": "payor",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16BFBEE58D0",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "text",
-                    "title": "Select Payor",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "wruxAutoCompleteHook": "autocompleteLookup",
-                    "wruxAutoCompleteParams": [{
-                        "name": "_endpoint",
-                        "value": "payors"
+                  "layout": [
+                    {
+                      "key": "payor",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16BFBEE58D0",
+                      "validationMessages": {
+                        "required": "Required"
                       },
-                      {
-                        "name": "_labelKey",
-                        "value": "name"
-                      },
-                      {
-                        "name": "_valueKey",
-                        "value": "externalReference"
-                      }
-                    ],
-                    "wruxAutoCompleteResultValueOnly": true,
-                    "wruxAutoCompleteApiSearch": true,
-                    "enableChangeEvent": false,
-                    "customEvent": ""
-                  }],
+                      "type": "text",
+                      "title": "Select Payor",
+                      "disabled": false,
+                      "notitle": false,
+                      "readonly": false,
+                      "wruxAutoCompleteHook": "autocompleteLookup",
+                      "wruxAutoCompleteParams": [
+                        {
+                          "name": "_endpoint",
+                          "value": "payors"
+                        },
+                        {
+                          "name": "_labelKey",
+                          "value": "name"
+                        },
+                        {
+                          "name": "_valueKey",
+                          "value": "externalReference"
+                        }
+                      ],
+                      "wruxAutoCompleteResultValueOnly": true,
+                      "wruxAutoCompleteApiSearch": true,
+                      "enableChangeEvent": false,
+                      "customEvent": ""
+                    }
+                  ],
                   "data": {}
                 }
               }
@@ -2438,81 +846,84 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "payor"
-              ]
+              "required": ["payor"]
             },
-            "layout": [{
-              "name": "div16BE2732DA8",
-              "type": "div",
-              "display": "flex",
-              "flex-direction": "column",
-              "justify-content": "space-between",
-              "align-content": "stretch",
-              "align-items": "stretch",
-              "flex-wrap": "wrap",
-              "expandable": true,
-              "expanded": true,
-              "id": "16BE272A7F2",
-              "notitle": false,
-              "title": "Receipt Information",
-              "items": [{
-                  "key": "payor-on-file",
-                  "type": "checkbox",
-                  "color": "primary",
-                  "customEvent": "",
-                  "id": "16BE273737B",
-                  "readonly": true,
-                  "title": "Payor On File",
-                  "wruxDynamic": false,
-                  "wruxDynamicHook": "",
-                  "wruxDynamicParams": [],
-                  "titleMap": [{
-                      "name": "Option 1",
-                      "value": "option1"
-                    },
-                    {
-                      "name": "Option 2",
-                      "value": "option2"
-                    }
-                  ],
-                  "hidden": false
-                },
-                {
-                  "key": "payor",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16BFBEE58D0",
-                  "validationMessages": {
-                    "required": "Required"
+            "layout": [
+              {
+                "name": "div16BE2732DA8",
+                "type": "div",
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "space-between",
+                "align-content": "stretch",
+                "align-items": "stretch",
+                "flex-wrap": "wrap",
+                "expandable": true,
+                "expanded": true,
+                "id": "16BE272A7F2",
+                "notitle": false,
+                "title": "Receipt Information",
+                "items": [
+                  {
+                    "key": "payor-on-file",
+                    "type": "checkbox",
+                    "color": "primary",
+                    "customEvent": "",
+                    "id": "16BE273737B",
+                    "readonly": true,
+                    "title": "Payor On File",
+                    "wruxDynamic": false,
+                    "wruxDynamicHook": "",
+                    "wruxDynamicParams": [],
+                    "titleMap": [
+                      {
+                        "name": "Option 1",
+                        "value": "option1"
+                      },
+                      {
+                        "name": "Option 2",
+                        "value": "option2"
+                      }
+                    ],
+                    "hidden": false
                   },
-                  "type": "text",
-                  "title": "Select Payor",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "wruxAutoCompleteHook": "autocompleteLookup",
-                  "wruxAutoCompleteParams": [{
-                      "name": "_endpoint",
-                      "value": "payors"
+                  {
+                    "key": "payor",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16BFBEE58D0",
+                    "validationMessages": {
+                      "required": "Required"
                     },
-                    {
-                      "name": "_labelKey",
-                      "value": "name"
-                    },
-                    {
-                      "name": "_valueKey",
-                      "value": "externalReference"
-                    }
-                  ],
-                  "wruxAutoCompleteResultValueOnly": true,
-                  "wruxAutoCompleteApiSearch": true,
-                  "enableChangeEvent": false,
-                  "customEvent": ""
-                }
-              ],
-              "hidden": false
-            }],
+                    "type": "text",
+                    "title": "Select Payor",
+                    "disabled": false,
+                    "notitle": false,
+                    "readonly": false,
+                    "wruxAutoCompleteHook": "autocompleteLookup",
+                    "wruxAutoCompleteParams": [
+                      {
+                        "name": "_endpoint",
+                        "value": "payors"
+                      },
+                      {
+                        "name": "_labelKey",
+                        "value": "name"
+                      },
+                      {
+                        "name": "_valueKey",
+                        "value": "externalReference"
+                      }
+                    ],
+                    "wruxAutoCompleteResultValueOnly": true,
+                    "wruxAutoCompleteApiSearch": true,
+                    "enableChangeEvent": false,
+                    "customEvent": ""
+                  }
+                ],
+                "hidden": false
+              }
+            ],
             "data": {
               "payor-on-file": true
             }
@@ -2524,7 +935,8 @@
             "active": false,
             "group": "layout",
             "label": "Additional Information",
-            "children": [{
+            "children": [
+              {
                 "dnd": {
                   "index": 14,
                   "active": false,
@@ -2546,42 +958,43 @@
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "transaction-description"
-                    ]
+                    "required": ["transaction-description"]
                   },
-                  "layout": [{
-                    "key": "transaction-description",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16BFBF03416",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "text",
-                    "title": "Transaction Description",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "wruxAutoCompleteHook": "autocompleteLookup",
-                    "wruxAutoCompleteParams": [{
-                        "name": "_endpoint",
-                        "value": "transaction-descriptions"
+                  "layout": [
+                    {
+                      "key": "transaction-description",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16BFBF03416",
+                      "validationMessages": {
+                        "required": "Required"
                       },
-                      {
-                        "name": "_labelKey",
-                        "value": "description"
-                      },
-                      {
-                        "name": "_valueKey",
-                        "value": "number"
-                      }
-                    ],
-                    "wruxAutoCompleteResultValueOnly": true,
-                    "wruxAutoCompleteApiSearch": true,
-                    "enableChangeEvent": false,
-                    "customEvent": ""
-                  }],
+                      "type": "text",
+                      "title": "Transaction Description",
+                      "disabled": false,
+                      "notitle": false,
+                      "readonly": false,
+                      "wruxAutoCompleteHook": "autocompleteLookup",
+                      "wruxAutoCompleteParams": [
+                        {
+                          "name": "_endpoint",
+                          "value": "transaction-descriptions"
+                        },
+                        {
+                          "name": "_labelKey",
+                          "value": "description"
+                        },
+                        {
+                          "name": "_valueKey",
+                          "value": "number"
+                        }
+                      ],
+                      "wruxAutoCompleteResultValueOnly": true,
+                      "wruxAutoCompleteApiSearch": true,
+                      "enableChangeEvent": false,
+                      "customEvent": ""
+                    }
+                  ],
                   "data": {}
                 }
               },
@@ -2607,42 +1020,43 @@
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "tax-code"
-                    ]
+                    "required": ["tax-code"]
                   },
-                  "layout": [{
-                    "key": "tax-code",
-                    "appearance": "outline",
-                    "floatLabel": "always",
-                    "id": "16BFBF0BE88",
-                    "validationMessages": {
-                      "required": "Required"
-                    },
-                    "type": "text",
-                    "title": "Tax Code",
-                    "disabled": false,
-                    "notitle": false,
-                    "readonly": false,
-                    "wruxAutoCompleteHook": "autocompleteLookup",
-                    "wruxAutoCompleteParams": [{
-                        "name": "_endpoint",
-                        "value": "tax-codes"
+                  "layout": [
+                    {
+                      "key": "tax-code",
+                      "appearance": "outline",
+                      "floatLabel": "always",
+                      "id": "16BFBF0BE88",
+                      "validationMessages": {
+                        "required": "Required"
                       },
-                      {
-                        "name": "_labelKey",
-                        "value": "description"
-                      },
-                      {
-                        "name": "_valueKey",
-                        "value": "number"
-                      }
-                    ],
-                    "wruxAutoCompleteResultValueOnly": false,
-                    "wruxAutoCompleteApiSearch": true,
-                    "enableChangeEvent": false,
-                    "customEvent": ""
-                  }],
+                      "type": "text",
+                      "title": "Tax Code",
+                      "disabled": false,
+                      "notitle": false,
+                      "readonly": false,
+                      "wruxAutoCompleteHook": "autocompleteLookup",
+                      "wruxAutoCompleteParams": [
+                        {
+                          "name": "_endpoint",
+                          "value": "tax-codes"
+                        },
+                        {
+                          "name": "_labelKey",
+                          "value": "description"
+                        },
+                        {
+                          "name": "_valueKey",
+                          "value": "number"
+                        }
+                      ],
+                      "wruxAutoCompleteResultValueOnly": false,
+                      "wruxAutoCompleteApiSearch": true,
+                      "enableChangeEvent": false,
+                      "customEvent": ""
+                    }
+                  ],
                   "data": {}
                 }
               },
@@ -2670,19 +1084,21 @@
                     },
                     "required": []
                   },
-                  "layout": [{
-                    "key": "explanation",
-                    "appearance": "outline",
-                    "type": "textarea",
-                    "floatLabel": "always",
-                    "id": "16B65402CB2",
-                    "lines": 5,
-                    "maxlength": 60,
-                    "notitle": false,
-                    "readonly": false,
-                    "title": "Explanation",
-                    "hidden": false
-                  }],
+                  "layout": [
+                    {
+                      "key": "explanation",
+                      "appearance": "outline",
+                      "type": "textarea",
+                      "floatLabel": "always",
+                      "id": "16B65402CB2",
+                      "lines": 5,
+                      "maxlength": 60,
+                      "notitle": false,
+                      "readonly": false,
+                      "title": "Explanation",
+                      "hidden": false
+                    }
+                  ],
                   "data": {}
                 }
               }
@@ -2709,105 +1125,107 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "transaction-description",
-                "tax-code"
-              ]
+              "required": ["transaction-description", "tax-code"]
             },
-            "layout": [{
-              "name": "div16BE274E734",
-              "type": "div",
-              "display": "flex",
-              "flex-direction": "column",
-              "justify-content": "space-between",
-              "align-content": "stretch",
-              "align-items": "stretch",
-              "flex-wrap": "wrap",
-              "expandable": true,
-              "expanded": true,
-              "id": "16BE2746CB8",
-              "notitle": false,
-              "title": "Additional Information",
-              "items": [{
-                  "key": "transaction-description",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16BFBF03416",
-                  "validationMessages": {
-                    "required": "Required"
+            "layout": [
+              {
+                "name": "div16BE274E734",
+                "type": "div",
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "space-between",
+                "align-content": "stretch",
+                "align-items": "stretch",
+                "flex-wrap": "wrap",
+                "expandable": true,
+                "expanded": true,
+                "id": "16BE2746CB8",
+                "notitle": false,
+                "title": "Additional Information",
+                "items": [
+                  {
+                    "key": "transaction-description",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16BFBF03416",
+                    "validationMessages": {
+                      "required": "Required"
+                    },
+                    "type": "text",
+                    "title": "Transaction Description",
+                    "disabled": false,
+                    "notitle": false,
+                    "readonly": false,
+                    "wruxAutoCompleteHook": "autocompleteLookup",
+                    "wruxAutoCompleteParams": [
+                      {
+                        "name": "_endpoint",
+                        "value": "transaction-descriptions"
+                      },
+                      {
+                        "name": "_labelKey",
+                        "value": "description"
+                      },
+                      {
+                        "name": "_valueKey",
+                        "value": "number"
+                      }
+                    ],
+                    "wruxAutoCompleteResultValueOnly": true,
+                    "wruxAutoCompleteApiSearch": true,
+                    "enableChangeEvent": false,
+                    "customEvent": ""
                   },
-                  "type": "text",
-                  "title": "Transaction Description",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "wruxAutoCompleteHook": "autocompleteLookup",
-                  "wruxAutoCompleteParams": [{
-                      "name": "_endpoint",
-                      "value": "transaction-descriptions"
+                  {
+                    "key": "tax-code",
+                    "appearance": "outline",
+                    "floatLabel": "always",
+                    "id": "16BFBF0BE88",
+                    "validationMessages": {
+                      "required": "Required"
                     },
-                    {
-                      "name": "_labelKey",
-                      "value": "description"
-                    },
-                    {
-                      "name": "_valueKey",
-                      "value": "number"
-                    }
-                  ],
-                  "wruxAutoCompleteResultValueOnly": true,
-                  "wruxAutoCompleteApiSearch": true,
-                  "enableChangeEvent": false,
-                  "customEvent": ""
-                },
-                {
-                  "key": "tax-code",
-                  "appearance": "outline",
-                  "floatLabel": "always",
-                  "id": "16BFBF0BE88",
-                  "validationMessages": {
-                    "required": "Required"
+                    "type": "text",
+                    "title": "Tax Code",
+                    "disabled": false,
+                    "notitle": false,
+                    "readonly": false,
+                    "wruxAutoCompleteHook": "autocompleteLookup",
+                    "wruxAutoCompleteParams": [
+                      {
+                        "name": "_endpoint",
+                        "value": "tax-codes"
+                      },
+                      {
+                        "name": "_labelKey",
+                        "value": "description"
+                      },
+                      {
+                        "name": "_valueKey",
+                        "value": "number"
+                      }
+                    ],
+                    "wruxAutoCompleteResultValueOnly": false,
+                    "wruxAutoCompleteApiSearch": true,
+                    "enableChangeEvent": false,
+                    "customEvent": ""
                   },
-                  "type": "text",
-                  "title": "Tax Code",
-                  "disabled": false,
-                  "notitle": false,
-                  "readonly": false,
-                  "wruxAutoCompleteHook": "autocompleteLookup",
-                  "wruxAutoCompleteParams": [{
-                      "name": "_endpoint",
-                      "value": "tax-codes"
-                    },
-                    {
-                      "name": "_labelKey",
-                      "value": "description"
-                    },
-                    {
-                      "name": "_valueKey",
-                      "value": "number"
-                    }
-                  ],
-                  "wruxAutoCompleteResultValueOnly": false,
-                  "wruxAutoCompleteApiSearch": true,
-                  "enableChangeEvent": false,
-                  "customEvent": ""
-                },
-                {
-                  "key": "explanation",
-                  "appearance": "outline",
-                  "type": "textarea",
-                  "floatLabel": "always",
-                  "id": "16B65402CB2",
-                  "lines": 5,
-                  "maxlength": 60,
-                  "notitle": false,
-                  "readonly": false,
-                  "title": "Explanation",
-                  "hidden": false
-                }
-              ],
-              "hidden": false
-            }],
+                  {
+                    "key": "explanation",
+                    "appearance": "outline",
+                    "type": "textarea",
+                    "floatLabel": "always",
+                    "id": "16B65402CB2",
+                    "lines": 5,
+                    "maxlength": 60,
+                    "notitle": false,
+                    "readonly": false,
+                    "title": "Explanation",
+                    "hidden": false
+                  }
+                ],
+                "hidden": false
+              }
+            ],
             "data": {}
           }
         },
@@ -2817,83 +1235,84 @@
             "active": false,
             "group": "layout",
             "label": "Documents",
-            "children": [{
-              "dnd": {
-                "index": 18,
-                "active": false,
-                "group": "common",
-                "type": "file",
-                "fieldType": {
-                  "type": "UDF"
+            "children": [
+              {
+                "dnd": {
+                  "index": 18,
+                  "active": false,
+                  "group": "common",
+                  "type": "file",
+                  "fieldType": {
+                    "type": "UDF"
+                  },
+                  "id": "16C630504C4",
+                  "parentIndex": 17,
+                  "layoutIndex": null
                 },
-                "id": "16C630504C4",
-                "parentIndex": 17,
-                "layoutIndex": null
-              },
-              "json": {
-                "schema": {
-                  "properties": {
-                    "documents": {
-                      "type": "array",
-                      "contains": {
-                        "type": "object"
+                "json": {
+                  "schema": {
+                    "properties": {
+                      "documents": {
+                        "type": "array",
+                        "contains": {
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "required": []
+                  },
+                  "layout": [
+                    {
+                      "key": "documents",
+                      "type": "file",
+                      "customEvent": "onFileUpload",
+                      "id": "16C630504C4",
+                      "label": "Add Documents",
+                      "maxFileSize": "",
+                      "multiple": true,
+                      "accept": [".jpg", ".pdf", ".png"],
+                      "validationMessages": {
+                        "required": "Required"
                       }
                     }
-                  },
-                  "required": []
-                },
-                "layout": [{
-                  "key": "documents",
-                  "type": "file",
-                  "customEvent": "onFileUpload",
-                  "id": "16C630504C4",
-                  "label": "Add Documents",
-                  "maxFileSize": "",
-                  "multiple": true,
-                  "accept": [
-                    ".jpg",
-                    ".pdf",
-                    ".png"
                   ],
-                  "validationMessages": {
-                    "required": "Required"
+                  "data": {
+                    "documents": [
+                      {
+                        "lastModified": 1564761688515,
+                        "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
+                        "name": "document-1.pdf",
+                        "size": 80000,
+                        "type": "application/pdf",
+                        "webkitRelativePath": "",
+                        "success": true,
+                        "upload-id": "16c631bf971"
+                      },
+                      {
+                        "lastModified": 1564761688515,
+                        "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
+                        "name": "document-2.pdf",
+                        "size": 101000,
+                        "type": "application/pdf",
+                        "webkitRelativePath": "",
+                        "success": true,
+                        "upload-id": "16c631bfb39"
+                      },
+                      {
+                        "lastModified": 1564761688515,
+                        "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
+                        "name": "document-3.pdf",
+                        "size": 23000,
+                        "type": "application/pdf",
+                        "webkitRelativePath": "",
+                        "success": true,
+                        "upload-id": "16c631bfdc5"
+                      }
+                    ]
                   }
-                }],
-                "data": {
-                  "documents": [{
-                      "lastModified": 1564761688515,
-                      "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
-                      "name": "document-1.pdf",
-                      "size": 80000,
-                      "type": "application/pdf",
-                      "webkitRelativePath": "",
-                      "success": true,
-                      "upload-id": "16c631bf971"
-                    },
-                    {
-                      "lastModified": 1564761688515,
-                      "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
-                      "name": "document-2.pdf",
-                      "size": 101000,
-                      "type": "application/pdf",
-                      "webkitRelativePath": "",
-                      "success": true,
-                      "upload-id": "16c631bfb39"
-                    },
-                    {
-                      "lastModified": 1564761688515,
-                      "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
-                      "name": "document-3.pdf",
-                      "size": 23000,
-                      "type": "application/pdf",
-                      "webkitRelativePath": "",
-                      "success": true,
-                      "upload-id": "16c631bfdc5"
-                    }
-                  ]
                 }
               }
-            }],
+            ],
             "fieldType": {
               "type": "UDF"
             },
@@ -2914,38 +1333,39 @@
               },
               "required": []
             },
-            "layout": [{
-              "type": "div",
-              "display": "flex",
-              "flex-direction": "row",
-              "justify-content": "space-between",
-              "align-content": "stretch",
-              "align-items": "stretch",
-              "flex-wrap": "wrap",
-              "expandable": true,
-              "expanded": true,
-              "id": "16C6304BC89",
-              "title": "Documents",
-              "items": [{
-                "key": "documents",
-                "type": "file",
-                "customEvent": "onFileUpload",
-                "id": "16C630504C4",
-                "label": "Add Documents",
-                "maxFileSize": "",
-                "multiple": true,
-                "accept": [
-                  ".jpg",
-                  ".pdf",
-                  ".png"
-                ],
-                "validationMessages": {
-                  "required": "Required"
-                }
-              }]
-            }],
+            "layout": [
+              {
+                "type": "div",
+                "display": "flex",
+                "flex-direction": "row",
+                "justify-content": "space-between",
+                "align-content": "stretch",
+                "align-items": "stretch",
+                "flex-wrap": "wrap",
+                "expandable": true,
+                "expanded": true,
+                "id": "16C6304BC89",
+                "title": "Documents",
+                "items": [
+                  {
+                    "key": "documents",
+                    "type": "file",
+                    "customEvent": "onFileUpload",
+                    "id": "16C630504C4",
+                    "label": "Add Documents",
+                    "maxFileSize": "",
+                    "multiple": true,
+                    "accept": [".jpg", ".pdf", ".png"],
+                    "validationMessages": {
+                      "required": "Required"
+                    }
+                  }
+                ]
+              }
+            ],
             "data": {
-              "documents": [{
+              "documents": [
+                {
                   "lastModified": 1564761688515,
                   "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
                   "name": "document-1.pdf",
@@ -3003,17 +1423,19 @@
               },
               "required": []
             },
-            "layout": [{
-              "color": "primary",
-              "customEvent": "",
-              "disabled": "disableInvalidSubmit",
-              "id": "16BB4226CD9",
-              "matbuttontype": "flat",
-              "name": "submit16BB4226CD9",
-              "title": "Submit",
-              "type": "submit",
-              "hidden": false
-            }]
+            "layout": [
+              {
+                "color": "primary",
+                "customEvent": "",
+                "disabled": "disableInvalidSubmit",
+                "id": "16BB4226CD9",
+                "matbuttontype": "flat",
+                "name": "submit16BB4226CD9",
+                "title": "Submit",
+                "type": "submit",
+                "hidden": false
+              }
+            ]
           }
         }
       ],
@@ -3083,7 +1505,8 @@
             "tax-code"
           ]
         },
-        "layout": [{
+        "layout": [
+          {
             "key": "cashReceiptDS",
             "id": "16BDD72F943",
             "type": "datasource",
@@ -3110,7 +1533,8 @@
             "id": "16BDBEAFFF1",
             "notitle": false,
             "title": "Transaction Identification",
-            "items": [{
+            "items": [
+              {
                 "key": "source-portfolio",
                 "appearance": "outline",
                 "floatLabel": "always",
@@ -3124,7 +1548,8 @@
                 "notitle": false,
                 "readonly": false,
                 "wruxAutoCompleteHook": "autocompleteLookup",
-                "wruxAutoCompleteParams": [{
+                "wruxAutoCompleteParams": [
+                  {
                     "name": "_endpoint",
                     "value": "portfolios"
                   },
@@ -3187,7 +1612,8 @@
                 "notitle": false,
                 "readonly": false,
                 "wruxAutoCompleteHook": "autocompleteLookup",
-                "wruxAutoCompleteParams": [{
+                "wruxAutoCompleteParams": [
+                  {
                     "name": "_endpoint",
                     "value": "funds-source"
                   },
@@ -3219,7 +1645,8 @@
                 "notitle": false,
                 "readonly": false,
                 "wruxAutoCompleteHook": "autocompleteLookup",
-                "wruxAutoCompleteParams": [{
+                "wruxAutoCompleteParams": [
+                  {
                     "name": "_endpoint",
                     "value": "funds-location"
                   },
@@ -3291,7 +1718,8 @@
             "id": "16BE272A7F2",
             "notitle": false,
             "title": "Receipt Information",
-            "items": [{
+            "items": [
+              {
                 "key": "payor-on-file",
                 "type": "checkbox",
                 "color": "primary",
@@ -3302,7 +1730,8 @@
                 "wruxDynamic": false,
                 "wruxDynamicHook": "",
                 "wruxDynamicParams": [],
-                "titleMap": [{
+                "titleMap": [
+                  {
                     "name": "Option 1",
                     "value": "option1"
                   },
@@ -3327,7 +1756,8 @@
                 "notitle": false,
                 "readonly": false,
                 "wruxAutoCompleteHook": "autocompleteLookup",
-                "wruxAutoCompleteParams": [{
+                "wruxAutoCompleteParams": [
+                  {
                     "name": "_endpoint",
                     "value": "payors"
                   },
@@ -3362,7 +1792,8 @@
             "id": "16BE2746CB8",
             "notitle": false,
             "title": "Additional Information",
-            "items": [{
+            "items": [
+              {
                 "key": "transaction-description",
                 "appearance": "outline",
                 "floatLabel": "always",
@@ -3376,7 +1807,8 @@
                 "notitle": false,
                 "readonly": false,
                 "wruxAutoCompleteHook": "autocompleteLookup",
-                "wruxAutoCompleteParams": [{
+                "wruxAutoCompleteParams": [
+                  {
                     "name": "_endpoint",
                     "value": "transaction-descriptions"
                   },
@@ -3408,7 +1840,8 @@
                 "notitle": false,
                 "readonly": false,
                 "wruxAutoCompleteHook": "autocompleteLookup",
-                "wruxAutoCompleteParams": [{
+                "wruxAutoCompleteParams": [
+                  {
                     "name": "_endpoint",
                     "value": "tax-codes"
                   },
@@ -3454,23 +1887,21 @@
             "expanded": true,
             "id": "16C6304BC89",
             "title": "Documents",
-            "items": [{
-              "key": "documents",
-              "type": "file",
-              "customEvent": "onFileUpload",
-              "id": "16C630504C4",
-              "label": "Add Documents",
-              "maxFileSize": "",
-              "multiple": true,
-              "accept": [
-                ".jpg",
-                ".pdf",
-                ".png"
-              ],
-              "validationMessages": {
-                "required": "Required"
+            "items": [
+              {
+                "key": "documents",
+                "type": "file",
+                "customEvent": "onFileUpload",
+                "id": "16C630504C4",
+                "label": "Add Documents",
+                "maxFileSize": "",
+                "multiple": true,
+                "accept": [".jpg", ".pdf", ".png"],
+                "validationMessages": {
+                  "required": "Required"
+                }
               }
-            }]
+            ]
           },
           {
             "color": "primary",
@@ -3488,7 +1919,8 @@
           "amount": "1000",
           "effective-date": "2019-08-05",
           "payor-on-file": true,
-          "documents": [{
+          "documents": [
+            {
               "lastModified": 1564761688515,
               "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
               "name": "document-1.pdf",
@@ -3539,7 +1971,8 @@
         "id": "16C3F6E79B9",
         "index": 5
       },
-      "model": [{
+      "model": [
+        {
           "dnd": {
             "index": 0,
             "active": false,
@@ -3562,27 +1995,26 @@
                   }
                 }
               },
-              "required": [
-                "documents"
-              ]
+              "required": ["documents"]
             },
-            "layout": [{
-              "key": "documents",
-              "type": "file",
-              "customEvent": "onFileUpload",
-              "id": "16C3F6D751B",
-              "label": "Attach File(s)",
-              "maxFileSize": 1,
-              "multiple": true,
-              "accept": [
-                ".pdf"
-              ],
-              "validationMessages": {
-                "required": "Required"
+            "layout": [
+              {
+                "key": "documents",
+                "type": "file",
+                "customEvent": "onFileUpload",
+                "id": "16C3F6D751B",
+                "label": "Attach File(s)",
+                "maxFileSize": 1,
+                "multiple": true,
+                "accept": [".pdf"],
+                "validationMessages": {
+                  "required": "Required"
+                }
               }
-            }],
+            ],
             "data": {
-              "documents": [{
+              "documents": [
+                {
                   "lastModified": 1564761688515,
                   "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
                   "name": "document-1.pdf",
@@ -3639,13 +2071,15 @@
               },
               "required": []
             },
-            "layout": [{
-              "key": "divider16C4E4EC158",
-              "name": "divider16C4E4EC158",
-              "widget": "message",
-              "title": "<hr class=\"divider\" />",
-              "id": "16C4E4EC158"
-            }]
+            "layout": [
+              {
+                "key": "divider16C4E4EC158",
+                "name": "divider16C4E4EC158",
+                "widget": "message",
+                "title": "<hr class=\"divider\" />",
+                "id": "16C4E4EC158"
+              }
+            ]
           }
         },
         {
@@ -3671,16 +2105,18 @@
               },
               "required": []
             },
-            "layout": [{
-              "key": "continue",
-              "color": "primary",
-              "customEvent": "",
-              "disabled": "disableInvalidSubmit",
-              "id": "16C3F6D7FA0",
-              "matbuttontype": "flat",
-              "title": "Continue",
-              "type": "submit"
-            }]
+            "layout": [
+              {
+                "key": "continue",
+                "color": "primary",
+                "customEvent": "",
+                "disabled": "disableInvalidSubmit",
+                "id": "16C3F6D7FA0",
+                "matbuttontype": "flat",
+                "title": "Continue",
+                "type": "submit"
+              }
+            ]
           }
         }
       ],
@@ -3702,11 +2138,10 @@
               "type": "string"
             }
           },
-          "required": [
-            "documents"
-          ]
+          "required": ["documents"]
         },
-        "layout": [{
+        "layout": [
+          {
             "key": "documents",
             "type": "file",
             "customEvent": "onFileUpload",
@@ -3714,9 +2149,7 @@
             "label": "Attach File(s)",
             "maxFileSize": 1,
             "multiple": true,
-            "accept": [
-              ".pdf"
-            ],
+            "accept": [".pdf"],
             "validationMessages": {
               "required": "Required"
             }
@@ -3740,7 +2173,8 @@
           }
         ],
         "data": {
-          "documents": [{
+          "documents": [
+            {
               "lastModified": 1564761688515,
               "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
               "name": "document-1.pdf",
@@ -3791,7 +2225,8 @@
         "createdInitValue": "Mon, Jul 29, 2019, 9:33:46 PM",
         "modifiedInitValue": "Mon, Jul 29, 2019, 10:18:45 PM"
       },
-      "model": [{
+      "model": [
+        {
           "dnd": {
             "index": 0,
             "active": true,
@@ -3814,35 +2249,33 @@
                   }
                 }
               },
-              "required": [
-                "documents"
-              ]
+              "required": ["documents"]
             },
-            "layout": [{
-              "key": "documents",
-              "type": "file",
-              "customEvent": "",
-              "id": "16C4083386B",
-              "label": "Attach File",
-              "maxFileSize": 20,
-              "multiple": false,
-              "accept": [
-                ".jpg",
-                ".pdf",
-                ".png"
-              ]
-            }],
+            "layout": [
+              {
+                "key": "documents",
+                "type": "file",
+                "customEvent": "",
+                "id": "16C4083386B",
+                "label": "Attach File",
+                "maxFileSize": 20,
+                "multiple": false,
+                "accept": [".jpg", ".pdf", ".png"]
+              }
+            ],
             "data": {
-              "documents": [{
-                "lastModified": 1564761688515,
-                "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
-                "name": "document-1.pdf",
-                "size": 80000,
-                "type": "application/pdf",
-                "webkitRelativePath": "",
-                "success": true,
-                "upload-id": "16c631bf971"
-              }]
+              "documents": [
+                {
+                  "lastModified": 1564761688515,
+                  "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
+                  "name": "document-1.pdf",
+                  "size": 80000,
+                  "type": "application/pdf",
+                  "webkitRelativePath": "",
+                  "success": true,
+                  "upload-id": "16c631bf971"
+                }
+              ]
             }
           }
         },
@@ -3867,17 +2300,17 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "documents"
-              ]
+              "required": ["documents"]
             },
-            "layout": [{
-              "key": "divider16C40834252",
-              "name": "divider16C40834252",
-              "widget": "message",
-              "title": "<hr class=\"divider\" />",
-              "id": "16C4083425A"
-            }]
+            "layout": [
+              {
+                "key": "divider16C40834252",
+                "name": "divider16C40834252",
+                "widget": "message",
+                "title": "<hr class=\"divider\" />",
+                "id": "16C4083425A"
+              }
+            ]
           }
         },
         {
@@ -3903,16 +2336,18 @@
               },
               "required": []
             },
-            "layout": [{
-              "key": "submit16C408327FD",
-              "color": "primary",
-              "customEvent": "",
-              "disabled": "disableInvalidSubmit",
-              "id": "16C40832805",
-              "matbuttontype": "flat",
-              "title": "Submit",
-              "type": "submit"
-            }]
+            "layout": [
+              {
+                "key": "submit16C408327FD",
+                "color": "primary",
+                "customEvent": "",
+                "disabled": "disableInvalidSubmit",
+                "id": "16C40832805",
+                "matbuttontype": "flat",
+                "title": "Submit",
+                "type": "submit"
+              }
+            ]
           }
         }
       ],
@@ -3934,11 +2369,10 @@
               "type": "string"
             }
           },
-          "required": [
-            "documents"
-          ]
+          "required": ["documents"]
         },
-        "layout": [{
+        "layout": [
+          {
             "key": "documents",
             "type": "file",
             "customEvent": "",
@@ -3946,11 +2380,7 @@
             "label": "Attach File",
             "maxFileSize": 20,
             "multiple": false,
-            "accept": [
-              ".jpg",
-              ".pdf",
-              ".png"
-            ]
+            "accept": [".jpg", ".pdf", ".png"]
           },
           {
             "key": "divider16C40834252",
@@ -3971,290 +2401,19 @@
           }
         ],
         "data": {
-          "documents": [{
-            "lastModified": 1564761688515,
-            "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
-            "name": "document-1.pdf",
-            "size": 80000,
-            "type": "application/pdf",
-            "webkitRelativePath": "",
-            "success": true,
-            "upload-id": "16c631bf971"
-          }]
-        }
-      }
-    },
-    {
-      "id": "16C4486653C",
-      "meta": {
-        "formType": "form",
-        "name": "Checkbox confirm",
-        "description": "",
-        "created": "Tue, Jul 30, 2019, 4:11:36 PM",
-        "modified": 1565098931298,
-        "groupId": "",
-        "templateId": "none",
-        "workflowId": "",
-        "size": "0 bytes",
-        "createdInitValue": 1564517496682,
-        "modifiedInitValue": 1564517496682,
-        "id": "16C4486653C",
-        "index": 7
-      },
-      "model": [{
-          "dnd": {
-            "index": 0,
-            "active": true,
-            "group": "common",
-            "label": "Your Name",
-            "type": "text",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16C672A4C16",
-            "parentIndex": null,
-            "layoutIndex": 0
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "text16C672A4C16": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "text16C672A4C16"
-              ]
-            },
-            "layout": [{
-              "key": "text16C672A4C16",
-              "appearance": "standard",
-              "floatLabel": "auto",
-              "id": "16C672A4C16",
-              "validationMessages": {
-                "required": "Required"
-              },
-              "type": "text",
-              "title": "Your Name",
-              "disabled": false,
-              "notitle": false,
-              "readonly": false,
-              "wruxAutoCompleteHook": "",
-              "wruxAutoCompleteParams": [],
-              "wruxAutoCompleteResultValueOnly": false,
-              "wruxAutoCompleteApiSearch": true,
-              "enableChangeEvent": false,
-              "customEvent": ""
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 1,
-            "active": false,
-            "group": "common",
-            "label": "Confirmation required to continue.",
-            "type": "checkbox",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "id": "16C448281D1",
-            "parentIndex": null,
-            "layoutIndex": 1
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "checkbox16C448281D1": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "checkbox16C448281D1"
-              ]
-            },
-            "layout": [{
-              "key": "checkbox16C448281D1",
-              "type": "checkbox",
-              "color": "primary",
-              "customEvent": "",
-              "id": "16C448281D1",
-              "readonly": false,
-              "title": "Confirmation required to continue.",
-              "validationMessages": {
-                "required": "Required"
-              },
-              "wruxDynamic": false,
-              "wruxDynamicHook": "",
-              "wruxDynamicParams": [],
-              "titleMap": [{
-                  "name": "Option 1",
-                  "value": "option1"
-                },
-                {
-                  "name": "Option 2",
-                  "value": "option2"
-                }
-              ]
-            }],
-            "data": {}
-          }
-        },
-        {
-          "dnd": {
-            "index": 2,
-            "active": false,
-            "group": "other",
-            "label": "Divider",
-            "type": "divider",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "parentIndex": null,
-            "layoutIndex": 2,
-            "id": "16C4486364F"
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "divider16C44863646": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "key": "divider16C44863646",
-              "name": "divider16C44863646",
-              "widget": "message",
-              "title": "<hr class=\"divider\" />",
-              "id": "16C4486364F"
-            }]
-          }
-        },
-        {
-          "dnd": {
-            "index": 3,
-            "active": false,
-            "group": "common",
-            "label": "Submit",
-            "type": "button",
-            "fieldType": {
-              "type": "UDF"
-            },
-            "parentIndex": null,
-            "layoutIndex": 3,
-            "id": "16C44863B19"
-          },
-          "json": {
-            "schema": {
-              "properties": {
-                "submit16C44863B0F": {
-                  "type": "string"
-                }
-              },
-              "required": []
-            },
-            "layout": [{
-              "key": "submit16C44863B0F",
-              "color": "primary",
-              "customEvent": "",
-              "disabled": "disableInvalidSubmit",
-              "id": "16C44863B19",
-              "matbuttontype": "flat",
-              "title": "Submit",
-              "type": "submit"
-            }]
-          }
-        }
-      ],
-      "json": {
-        "schema": {
-          "type": "object",
-          "title": "My New Form",
-          "properties": {
-            "text16C672A4C16": {
-              "type": "string"
-            },
-            "checkbox16C448281D1": {
-              "type": "boolean"
-            },
-            "divider16C44863646": {
-              "type": "string"
-            },
-            "submit16C44863B0F": {
-              "type": "string"
+          "documents": [
+            {
+              "lastModified": 1564761688515,
+              "lastModifiedDate": "Fri Aug 02 2019 12:01:28 GMT-0400 (Eastern Daylight Time)",
+              "name": "document-1.pdf",
+              "size": 80000,
+              "type": "application/pdf",
+              "webkitRelativePath": "",
+              "success": true,
+              "upload-id": "16c631bf971"
             }
-          },
-          "required": [
-            "text16C672A4C16",
-            "checkbox16C448281D1"
           ]
-        },
-        "layout": [{
-            "key": "text16C672A4C16",
-            "appearance": "standard",
-            "floatLabel": "auto",
-            "id": "16C672A4C16",
-            "validationMessages": {
-              "required": "Required"
-            },
-            "type": "text",
-            "title": "Your Name",
-            "disabled": false,
-            "notitle": false,
-            "readonly": false,
-            "wruxAutoCompleteHook": "",
-            "wruxAutoCompleteParams": [],
-            "wruxAutoCompleteResultValueOnly": false,
-            "wruxAutoCompleteApiSearch": true,
-            "enableChangeEvent": false,
-            "customEvent": ""
-          },
-          {
-            "key": "checkbox16C448281D1",
-            "type": "checkbox",
-            "color": "primary",
-            "customEvent": "",
-            "id": "16C448281D1",
-            "readonly": false,
-            "title": "Confirmation required to continue.",
-            "validationMessages": {
-              "required": "Required"
-            },
-            "wruxDynamic": false,
-            "wruxDynamicHook": "",
-            "wruxDynamicParams": [],
-            "titleMap": [{
-                "name": "Option 1",
-                "value": "option1"
-              },
-              {
-                "name": "Option 2",
-                "value": "option2"
-              }
-            ]
-          },
-          {
-            "key": "divider16C44863646",
-            "name": "divider16C44863646",
-            "widget": "message",
-            "title": "<hr class=\"divider\" />",
-            "id": "16C4486364F"
-          },
-          {
-            "key": "submit16C44863B0F",
-            "color": "primary",
-            "customEvent": "",
-            "disabled": "disableInvalidSubmit",
-            "id": "16C44863B19",
-            "matbuttontype": "flat",
-            "title": "Submit",
-            "type": "submit"
-          }
-        ],
-        "data": {}
+        }
       }
     }
   ]
